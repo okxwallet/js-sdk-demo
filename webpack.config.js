@@ -2,7 +2,7 @@ const path = require('path')
 const CopyPlugin = require('copy-webpack-plugin')
 
 const srcPath = path.resolve(__dirname, 'src')
-const distPath = path.resolve(__dirname, 'dist')
+const distPath = path.resolve(__dirname, 'docs')
 
 module.exports = {
   devtool: 'eval-source-map',
