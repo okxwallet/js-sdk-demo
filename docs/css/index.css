@@ -1,0 +1,16 @@
+section {
+  margin: 20px 0;
+}
+
+button {
+  width: 100%;
+}
+
+.json-string {
+  color: #86b25c;
+  word-break: break-all;
+}
+
+body {
+  min-width: 360px;
+}
