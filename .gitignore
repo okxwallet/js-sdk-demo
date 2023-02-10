@@ -1,0 +1,13 @@
+node_modules
+.DS_Store
+.vscode
+.idea
+coverage
+coverage-all
+coverage-increment
+.eslintcache
+.idea
+.docz
+*.log
+release
+types
