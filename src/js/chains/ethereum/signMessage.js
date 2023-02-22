@@ -22,8 +22,10 @@ const ethereumSignMessageResult = ethereumSignMessage.querySelector(
 );
 
 // ui
-okxWeb3.init().then((wallet) => {
-  ethereumSignMessageAccount.value = wallet.addresses.ethereum.address;
+window.addEventListener('load', () => {
+  okxWeb3.init().then((wallet) => {
+    ethereumSignMessageAccount.value = wallet.addresses.ethereum.address;
+  }).catch(console.log);
 });
 
 const { CHAINS } = okxWeb3;

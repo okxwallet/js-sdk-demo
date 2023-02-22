@@ -18,8 +18,10 @@ const aptosGetAptosBalanceResult = aptosGetAptosBalance.querySelector(
   '#aptosGetAptosBalanceResult',
 );
 
-okxWeb3.init().then((wallet) => {
-  aptosGetAptosBalanceAddress.value = wallet.addresses.aptos.address;
+window.addEventListener('load', () => {
+  okxWeb3.init().then((wallet) => {
+    aptosGetAptosBalanceAddress.value = wallet.addresses.aptos.address;
+  }).catch(console.log);
 });
 
 aptosGetAptosBalanceButton.addEventListener('click', () => {

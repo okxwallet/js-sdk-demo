@@ -26,11 +26,12 @@ const aptosSendTransactionAPTResult = aptosSendTransactionAPT.querySelector(
 );
 
 // ui
-okxWeb3.init().then((wallet) => {
-  aptosSendTransactionAPTFrom.value = wallet.addresses.aptos.address;
-  aptosSendTransactionAPTTo.value = wallet.addresses.aptos.address;
+window.addEventListener('load', () => {
+  okxWeb3.init().then((wallet) => {
+    aptosSendTransactionAPTFrom.value = wallet.addresses.aptos.address;
+    aptosSendTransactionAPTTo.value = wallet.addresses.aptos.address;
+  }).catch(console.log);
 });
-
 // logic
 aptosSendTransactionAPTButton.addEventListener('click', () => {
   const to = aptosSendTransactionAPTTo.value;

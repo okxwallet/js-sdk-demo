@@ -18,10 +18,11 @@ const aptosCheckAndRegAptosCoinResult = aptosCheckAndRegAptosCoin.querySelector(
   '#aptosCheckAndRegAptosCoinResult',
 );
 
-okxWeb3.init().then((wallet) => {
-  aptosCheckAndRegAptosCoinAddress.value = wallet.addresses.aptos.address;
+window.addEventListener('load', () => {
+  okxWeb3.init().then((wallet) => {
+    aptosCheckAndRegAptosCoinAddress.value = wallet.addresses.aptos.address;
+  }).catch(console.log);
 });
-
 aptosCheckAndRegAptosCoinButton.addEventListener('click', () => {
   const address = aptosCheckAndRegAptosCoinAddress.value;
   const contractAddress = aptosCheckAndRegAptosCoinContract.value;

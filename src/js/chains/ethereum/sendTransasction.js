@@ -31,17 +31,19 @@ const ethereumSendTransactionETHResult = ethereumSendTransaction.querySelector(
   '#ethereumSendTransactionETHResult',
 );
 
-okxWeb3.init().then((wallet) => {
-  ethereumSendTransactionETHFrom.value = wallet.addresses.ethereum.address;
-  ethereumSendTransactionETHTo.value = wallet.addresses.ethereum.address;
-  ethereumSendTransactionETHChainName.innerHTML = Object.keys(CHAINS).map(
-    (c) => {
-      if (CHAINS[c] === CHAINS.OKC) {
-        return `<option selected>${CHAINS.OKC}</option>`;
-      }
-      return `<option>${CHAINS[c]}</option>`;
-    },
-  );
+window.addEventListener('load', () => {
+  okxWeb3.init().then((wallet) => {
+    ethereumSendTransactionETHFrom.value = wallet.addresses.ethereum.address;
+    ethereumSendTransactionETHTo.value = wallet.addresses.ethereum.address;
+    ethereumSendTransactionETHChainName.innerHTML = Object.keys(CHAINS).map(
+      (c) => {
+        if (CHAINS[c] === CHAINS.OKC) {
+          return `<option selected>${CHAINS.OKC}</option>`;
+        }
+        return `<option>${CHAINS[c]}</option>`;
+      },
+    );
+  }).catch(console.log);
 });
 
 ethereumSendTransactionETHButton.addEventListener('click', () => {
@@ -96,16 +98,18 @@ const ethereumSendTransactionContractResult =
     '#ethereumSendTransactionContractResult',
   );
 
-okxWeb3.init().then((wallet) => {
-  ethereumSendTransactionContractFrom.value = wallet.addresses.ethereum.address;
-  ethereumSendTransactionContractChainName.innerHTML = Object.keys(CHAINS).map(
-    (c) => {
-      if (CHAINS[c] === CHAINS.OKC) {
-        return `<option selected>${CHAINS.OKC}</option>`;
-      }
-      return `<option>${CHAINS[c]}</option>`;
-    },
-  );
+window.addEventListener('load', () => {
+  okxWeb3.init().then((wallet) => {
+    ethereumSendTransactionContractFrom.value = wallet.addresses.ethereum.address;
+    ethereumSendTransactionContractChainName.innerHTML = Object.keys(CHAINS).map(
+      (c) => {
+        if (CHAINS[c] === CHAINS.OKC) {
+          return `<option selected>${CHAINS.OKC}</option>`;
+        }
+        return `<option>${CHAINS[c]}</option>`;
+      },
+    );
+  }).catch(console.log);
 });
 
 ethereumSendTransactionContractButton.addEventListener('click', () => {

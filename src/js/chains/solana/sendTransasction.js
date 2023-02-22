@@ -40,9 +40,11 @@ const solanaSetRpcButton = solana.querySelector(
 );
 
 // ui
-okxWeb3.init().then((wallet) => {
-  solanaSendTransactionSOLFrom.value = wallet.addresses.solana.address;
-  solanaSendTransactionSOLTo.value = wallet.addresses.solana.address;
+window.addEventListener('load', () => {
+  okxWeb3.init().then((wallet) => {
+    solanaSendTransactionSOLFrom.value = wallet.addresses.solana.address;
+    solanaSendTransactionSOLTo.value = wallet.addresses.solana.address;
+  }).catch(console.log);;
 });
 
 solanaSetRpcButton.addEventListener('click', () => {
@@ -109,9 +111,11 @@ const solanaSendTransactionSPLResult = solanaSendTransactionSPL.querySelector(
 );
 
 // ui
-okxWeb3.init().then((wallet) => {
-  solanaSendTransactionSPLFromOwner.value = wallet.addresses.solana.address;
-  solanaSendTransactionSPLToOwner.value = wallet.addresses.solana.address;
+window.addEventListener('load', () => {
+  okxWeb3.init().then((wallet) => {
+    solanaSendTransactionSPLFromOwner.value = wallet.addresses.solana.address;
+    solanaSendTransactionSPLToOwner.value = wallet.addresses.solana.address;
+  }).catch(console.log);
 });
 
 const connection = new Connection('https://rpc.ankr.com/solana');
